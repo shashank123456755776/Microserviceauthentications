@@ -16,12 +16,14 @@ class TaskListCreateView(APIView):
 
         # Get role from the authenticated user
         role = getattr(request.user, 'role', None)
+       
         print(f"Role of authenticated user: {role}")  # Debugging log
 
         # If role is None or invalid, return an error
-        if not role or role not in ["Admin", "Manager"]:
-            return Response({"detail": "You do not have permission to create tasks."}, status=status.HTTP_403_FORBIDDEN)
-
+        if role=="admin":
+            pass
+            
+       
         # Proceed to create the task
         data = request.data
         data['created_by'] = request.user.id  # Attach the user ID to the task

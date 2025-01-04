@@ -1,0 +1,129 @@
+{
+    "info": {
+        "name": "Auth Service API Collection",
+        "description": "API collection for managing authentication and user roles in auth_services. Includes request bodies and expected responses.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Login with API Key",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"username\": \"shalu\",\n    \"email\": \"shalu12@gmail.com\",\n    \"role\": \"team_member\",\n    \"password\": \"Krishna12345#@\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/log/login/api-key/",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8000",
+                    "path": ["log", "login", "api-key"]
+                }
+            },
+            "response": [
+                {
+                    "name": "Success Response",
+                    "originalRequest": {},
+                    "status": "OK",
+                    "code": 200,
+                    "body": "{\n    \"refresh\": \"<refresh_token>\",\n    \"access\": \"<access_token>\",\n    \"username\": \"shalu\",\n    \"role\": \"team_member\",\n    \"uuid\": \"f0f43ac7-eeab-4145-a305-f110fc9bd062\",\n    \"api_key\": \"b928a400ceb594fc58c1d965ee9eacd1844669136d931a66d5353cb72f665e60\"\n}"
+                },
+                {
+                    "name": "Error Response",
+                    "originalRequest": {},
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "body": "{\n    \"detail\": \"Invalid credentials.\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"username\": \"sonu\",\n    \"email\": \"sonu12@gmail.com\",\n    \"role\": \"admin\",\n    \"password\": \"Krishna12#@\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/log/login/",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8000",
+                    "path": ["log", "login"]
+                }
+            },
+            "response": [
+                {
+                    "name": "Success Response",
+                    "originalRequest": {},
+                    "status": "OK",
+                    "code": 200,
+                    "body": "{\n    \"uuid\": \"a06d40b4-952b-46ad-8dc9-e7d36cb595bc\",\n    \"refresh\": \"<refresh_token>\",\n    \"access\": \"<access_token>\",\n    \"role\": \"admin\",\n    \"api_key\": \"aee9eeae76712c750143e08d63623b153a863b9aa56dfecb327a219210cf2e9c\",\n    \"status\": 200\n}"
+                },
+                {
+                    "name": "Error Response",
+                    "originalRequest": {},
+                    "status": "Unauthorized",
+                    "code": 401,
+                    "body": "{\n    \"detail\": \"Invalid credentials.\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "Register",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"username\": \"sonu\",\n    \"email\": \"sonu12@gmail.com\",\n    \"role\": \"admin\",\n    \"password\": \"Krishna12#@\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/reg/register/",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8000",
+                    "path": ["reg", "register"]
+                }
+            },
+            "response": [
+                {
+                    "name": "Success Response",
+                    "originalRequest": {},
+                    "status": "Created",
+                    "code": 201,
+                    "body": "{\n    \"uuid\": \"a06d40b4-952b-46ad-8dc9-e7d36cb595bc\",\n    \"username\": \"sonu\",\n    \"email\": \"sonu12@gmail.com\",\n    \"role\": \"admin\",\n    \"message\": \"User registered successfully.\"\n}"
+                },
+                {
+                    "name": "Error Response",
+                    "originalRequest": {},
+                    "status": "Bad Request",
+                    "code": 400,
+                    "body": "{\n    \"username\": [\"A user with that username already exists.\"]\n}"
+                }
+            ]
+        }
+    ]
+}
