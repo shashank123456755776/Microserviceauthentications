@@ -44,6 +44,7 @@ class TaskRetrieveUpdateDeleteView(APIView):
             task = Task.objects.get(pk=pk)
         except Task.DoesNotExist:
             return Response({"error": "Task not found"}, status=status.HTTP_404_NOT_FOUND)
+        
 
         serializer = TaskSerializer(task)
         return Response(serializer.data, status=status.HTTP_200_OK)

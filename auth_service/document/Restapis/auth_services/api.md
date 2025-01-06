@@ -1,9 +1,5 @@
 
 
-Here’s an example of an API documentation (`api.md`) for your provided endpoints:
-
----
-
 # API Documentation
 
 ## Base URL
@@ -163,4 +159,3 @@ Here’s an example of an API documentation (`api.md`) for your provided endpoin
 
 ---
 
-This should provide a clear documentation for your API. You can further modify it based on the specifics of your system or environment.

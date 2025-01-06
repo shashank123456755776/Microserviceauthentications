@@ -1,0 +1,101 @@
+{
+  "info": {
+    "_postman_id": "12345678-90ab-cdef-ghij-klmnopqrstuv",
+    "name": "Task Management API",
+    "description": "Collection for task management API requests"
+  },
+  "item": [
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "153e03d24efa29204a5968387eb777258ef46c2f0bb9ee8ae3427f6b725368c9",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"title\": \"New Task\",\n    \"description\": \"This is a new task.\",\n    \"due_date\": \"2024-12-31\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8001/tasks/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["tasks"]
+        }
+      }
+    },
+    {
+      "name": "Get Task by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "153e03d24efa29204a5968387eb777258ef46c2f0bb9ee8ae3427f6b725368c9",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8001/tasks/7/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["tasks", "7"]
+        }
+      }
+    },
+    {
+      "name": "Delete Task by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "153e03d24efa29204a5968387eb777258ef46c2f0bb9ee8ae3427f6b725368c9",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 6,\n    \"title\": \"Task Title\",\n    \"description\": \"Task Description\",\n    \"created_by\": 2\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8001/tasks/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["tasks"]
+        }
+      }
+    },
+    {
+      "name": "Update Task by ID",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "153e03d24efa29204a5968387eb777258ef46c2f0bb9ee8ae3427f6b725368c9",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Updated Task Name\",\n    \"description\": \"This is an updated description for the task.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8001/tasks/7/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["tasks", "7"]
+        }
+      }
+    }
+  ]
+}
