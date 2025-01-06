@@ -1,6 +1,6 @@
 # Microservices Dockerized Deployment
 
-This project contains multiple Django-based microservices deployed using Docker.
+My project contains multiple Django-based microservices deployed using Docker.
 
 ## Microservices Overview
 - `auth_service`: Handles authentication and authorization.
@@ -8,8 +8,8 @@ This project contains multiple Django-based microservices deployed using Docker.
 - `task_service`: Manages tasks.
 
 ## Prerequisites
-1. Install Docker on your system.
-2. Ensure you have the necessary permissions to run Docker commands.
+1. Install Docker on my system.
+2. Ensure that i  have the necessary permissions to run Docker commands in my system.
 
 ## Project Structure
 ```
@@ -90,6 +90,6 @@ If changes are made to the services, rebuild the image:
 docker build -t microservices-container .
 ```
 
-## Notes
+# very important points .........
 - Make sure to update `start_all_services.sh` if any service's port or directory changes.
 - Modify the `Dockerfile` to include additional dependencies or configurations specific to your application.
